@@ -1,0 +1,248 @@
+.NET Runtime
+.NET SDK
+7-Zip
+A2A JS SDK
+Active Directory Authentication Library
+Aiohttp
+Alma Linux
+Amazon Corretto JDK
+Amazon Corretto JRE
+Amazon Linux 2
+Amazon Linux 2023
+Angular
+Angular CLI
+Ansible
+Ansible Core
+Anthropic SDK
+Apache Airflow
+Apache Arrow
+Apache Camel
+Apache Freemarker
+Apache HTTP Server
+Apache Kafka
+Apache Log4j
+Apache Shiro
+Apache Struts
+Apache Subversion
+Apache Tika
+Apache Tomcat
+Apache ZooKeeper
+Apollo Server
+Argo CD
+Aria2
+ASP.NET Core
+Atlantis
+Avahi
+AWS CLI
+AWS IAM Authenticator for Kubernetes
+AWS SDK for .NET
+AWS SDK for Go (v1)
+AWS SDK for Go (v2)
+AWS SDK for Java
+AWS SDK for JavaScript
+AWS SDK for PHP
+AWS SDK for Python (Boto2)
+AWS SDK for Python (Boto3)
+AWS SDK for Ruby
+AWS Systems Manager Agent (SSM)
+Azure CLI
+CBL Mariner
+Celery
+Chainguard
+Chartmuseum
+Chroma
+Chromium
+Chrony
+Clam AntiVirus
+CMake
+Cohere
+Composer
+containerd
+CUDA Toolkit
+cURL
+Cyrus SASL
+Datadog Agent
+Django
+Dropwizard
+DuckDB
+Eclipse Adoptium JDK
+Eclipse Adoptium JRE
+Elasticsearch
+Envoy
+Erlang OTP
+Exim
+Faiss
+Fairwinds Goldilocks
+Ffmpeg
+Firebase
+Flask
+Flower
+Flowise
+Fluent Bit
+Flux Kustomize Controller
+gcloud CLI
+Ghostscript
+Git
+GitLab
+GnuTLS
+Golang
+Google Chrome
+GPGME
+Grafana
+Grafana Loki
+Grafana Loki Canary
+Grafana Tempo
+GraphicsMagick
+Graphviz
+gRPC
+Gunicorn
+Hadoop
+Handlebars
+HAProxy
+HTTPie
+Hugging Face Transformers
+IBM JRE
+ImageMagick
+InfluxDB
+Ingress NGINX Controller (community-driven)
+Istio Control Plane (istiod)
+Istio proxy
+JDK
+JDWP
+JRE
+Jupyter Notebook
+JupyterHub
+JupyterLab
+Kafka UI
+Keycloak
+Kiali
+Kong
+Kubectl
+LangChain
+LangFlow
+LangGraph
+Laravel
+Lettuce Redis Client
+Libcurl
+Libgcrypt
+LibreSSL
+libsodium
+LibTomCrypt
+Libwebp
+Liferay Portal
+LightGBM
+Linux Alpine
+Linux CentOS
+Linux Debian
+Linux Oracle
+Linux Photon
+Linux Red Hat
+Linux Ubuntu
+LiteLLM
+llamafile
+LlamaIndex
+Localtunnel
+Logstash
+MariaDB Client
+MariaDB Server
+Maven
+Mbed TLS
+Metabase
+Milvus
+Milvus SDK
+Miniconda
+MLflow
+Model Context Protocol
+ModSecurity
+Mongo Express
+MongoDB
+Moq
+Mozilla Firefox
+MySQL
+MySQL Connector/J
+n8n
+Nebula
+Nettle
+Next.js
+NGINX
+Nmap
+Node.js
+npm
+NTP
+NVIDIA Container Toolkit
+NVIDIA GPU Operator
+NVIDIA Graphics Driver
+ODBC Driver for SQL Server - Linux
+Ollama SDK
+ONNX Runtime
+OPA Gatekeeper
+OpenAI SDK
+OpenJDK JDK
+OpenJDK JRE
+OpenMetadata
+OpenResty
+OpenSearch
+OpenSSH
+OpenSSL
+OpenVPN
+PaLM API
+Percona Server for MySQL
+pgVector
+PHP
+PostgreSQL
+Prometheus
+Python Interpreter
+Pytorch
+Qdrant SDK
+Qt
+RabbitMQ
+Ramda
+Rancher
+React Router
+Reactor Netty
+Redis
+Redis Insight
+Replicate
+ReportLab
+RHash
+RocksDB
+Rocky Linux
+rsync
+rsyslog
+Ruby Interpreter
+Ruby on Rails
+RubyGems
+SailPoint Virtual Appliance
+SCons
+ServiceNow MID Server
+Sonatype Nexus
+Spring Boot
+Spring Boot Actuator
+Spring Cloud
+Spring Framework
+Spring Security
+Spring Web MVC
+Spring WebFlux
+SQLite
+Squid
+Streamlit
+strongSwan
+Supabase
+SUSE Linux Enterprise Server
+TaffyDB
+TCPdump
+TensorFlow Serving
+Terraform Community
+Tiktoken
+Vertex AI SDK
+Vim
+vLLM
+vsftpd
+Weaviate SDK
+WinRAR
+Wolfi
+WordPress
+XGBoost
+Yarn
+Zulu JDK
+Zulu JRE
