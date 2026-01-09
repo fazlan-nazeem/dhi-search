@@ -61,5 +61,4 @@ This file should contain a list of image names, one per line.Modify the file whi
 
 4. **Manual Verification**
 
-It is recommended to manually verify the results. The tool will output two CSV files: `matched_results.csv` and `unmatched_results.csv`. 
-The `matched_results.csv` file will contain the list of images that were matched, and the `unmatched_results.csv` file will contain the list of images that were not matched.
+It is recommended to manually verify the results in the `matched_results.csv` and `unmatched_results.csv` files as the tool may not always be 100% accurate.
