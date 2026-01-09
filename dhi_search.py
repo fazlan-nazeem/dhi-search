@@ -52,6 +52,7 @@ def fetch_catalog(token):
         items {
           name
           type
+          tagNames
         }
       }
     }
@@ -71,8 +72,8 @@ def fetch_catalog(token):
 
 def extract_image_names(catalog_data):
     """Extracts image names and stats from the GraphQL response."""
-    image_names = set()
     stats = {}
+    image_data = {} # name -> tags_list
     
     try:
         items = catalog_data['data']['dhiListRepositories']['items']
@@ -82,21 +83,25 @@ def extract_image_names(catalog_data):
             item_type = item.get('type', 'Unknown')
             
             if name:
-                image_names.add(name)
                 stats[item_type] = stats.get(item_type, 0) + 1
+                
+                # Extract tags
+                # Field is 'tagNames', which is a list of strings
+                tags = item.get('tagNames', []) or []
+                
+                image_data[name] = tags
                 
     except (KeyError, TypeError) as e:
         print(f"Error parsing GraphQL response: {e}")
-        # Debug dump
-        with open('graphql_error_dump.json', 'w') as f:
-            json.dump(catalog_data, f, indent=2)
-        print("Dumped response to 'graphql_error_dump.json'")
+        print("Full response from server:")
+        print(json.dumps(catalog_data, indent=2))
         sys.exit(1)
 
-    return list(image_names), stats
+    return image_data, stats
 
-def find_matches(input_image, catalog_images):
+def find_matches(input_image, catalog_image_data):
     """Finds fuzzy matches for a given image name."""
+    catalog_images = list(catalog_image_data.keys())
     # Normalize input: remove spaces, lowercase
     query = input_image.lower()
     
@@ -155,7 +160,22 @@ def find_matches(input_image, catalog_images):
                 break
         
         if should_continue:
-            continue
+            # CHECK TAGS: If specific keywords are missing from name, check if they exist in tags
+            # We need to access tags for 'name'.
+            tags = catalog_image_data.get(name, [])
+            tags_str = " ".join(tags).lower()
+            
+            # Re-evaluate keywords against tags
+            all_keywords_found_in_tags = True
+            for kw in keywords_to_enforce:
+                if kw in query_parts:
+                    # kw must be in name OR tags
+                    if kw not in name_clean and kw not in tags_str:
+                        all_keywords_found_in_tags = False
+                        break
+            
+            if not all_keywords_found_in_tags:
+                continue
 
         results.append((name, score))
              
@@ -184,7 +204,8 @@ def main():
     print("Fetching Docker Hardened Image catalog (via GraphQL)...")
     catalog_data = fetch_catalog(token)
     
-    catalog_images, stats = extract_image_names(catalog_data)
+    catalog_image_data, stats = extract_image_names(catalog_data)
+    catalog_images = list(catalog_image_data.keys())
     
     print("\nCatalog Statistics:")
     total_images = len(catalog_images)
@@ -197,7 +218,7 @@ def main():
     print("-" * 80)
     
     for img in input_images:
-        matches = find_matches(img, catalog_images)
+        matches = find_matches(img, catalog_image_data)
         if matches:
             match_str = ", ".join(matches[:3]) # Show top 3
             print(f"{img:<40} | {match_str}")
@@ -216,7 +237,7 @@ def main():
         writer_matched.writerow(['Input Image', 'Matched Images'])
         
         for img in input_images:
-            matches = find_matches(img, catalog_images)
+            matches = find_matches(img, catalog_image_data)
             if matches:
                  match_str = ', '.join(matches[:3])
                  row = [img, match_str]

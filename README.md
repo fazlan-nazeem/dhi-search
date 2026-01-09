@@ -7,6 +7,7 @@ A tool to fuzzy-match a list of image names against the [Docker Hardened Image (
 - **Alias Support**: specifically handles known mapping like `.NET` -> `dotnet`.
 - **CSV Export**: Outputs results to `matched_results.csv` and `unmatched_results.csv` files.
 - **Stop Words**: Filters out common words (like `runtime`, `sdk`, `cli`, `agent`, etc.) from the core name to reduce false positives, while ensuring critical terms like `cli` and `sdk` are present if they appear in the input.
+- **Tag-Aware Matching**: If a match is not found by name alone, the tool checks the repository's tags. For example, `.NET SDK` will match the `dotnet` repository because it contains an `sdk` tag.
 
 
 
