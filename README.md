@@ -49,7 +49,7 @@ This file should contain a list of image names, one per line.Modify the file whi
     Input Image                              | Matched Images
     --------------------------------------------------------------------------------
     .NET Runtime                             | dotnet
-    .NET SDK                                 | (No match found)
+    .NET SDK                                 | dotnet
     7-Zip                                    | (No match found)
     A2A JS SDK                               | (No match found)
     Active Directory Authentication Library  | (No match found)
