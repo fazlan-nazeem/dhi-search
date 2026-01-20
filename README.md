@@ -29,6 +29,7 @@ This file should contain a list of image names, one per line.Modify the file whi
     docker run --rm \
       -e DOCKER_USERNAME="your_username" \
       -e DOCKER_PAT="your_pat" \
+      -v "$(pwd)":/app \
       dhi-search
     ```
 
